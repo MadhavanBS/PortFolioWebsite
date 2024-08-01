@@ -24,7 +24,7 @@
             </nav>
         </div>
             <div class="header-text">
-        <h1>Hi! I m <span>Madhavan</span> <br> I m Devops Engineer</h1>
+        <h1>Hi! I'm <span>Madhavan</span> <br> I'm Devops Engineer</h1>
     </div>
     </header>
 <!----------about-------->
@@ -38,10 +38,29 @@
                     <h1 class="subtitle">About Me</h1>
                     <p>Seasoned Python backend engineer with 2 years of industrial experience in designing, developing, and maintaining robust applications. Proficient in building scalable microservices and REST APIs, managing databases, and implementing MLOps practices. Skilled in scheduling and automating tasks with cron jobs and adept at using Docker and Kubernetes for container orchestration. Strong background in integrating and managing various file servers and message brokers.</p>
                     <div class="tab-titles">
-                        <p class="tab-links">Skills</p>
-                        <p class="tab-links">Experience</p>
-                        <p class="tab-links">Education</p>
-                        
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id='Skills'>
+                        <ul>
+                            <li><span>DevOps</span><br>Backend engineering</li>
+                            <li><span>Machine Learning</span><br>ML Lifecycle</li>
+                            <li><span>Data Science</span><br>Data engineering - ETL</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id='Experience'>
+                        <ul>
+                            <li><span>March 2024 - Present</span><br>Data Scientist at BGSW</li>
+                            <li><span>August 2022 - Present</span><br>DevOps Engineer at BGSW</li>
+                            <li><span>May 2021 - July 2021</span><br>Machine Learning Researcher at NITT</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id='Education'>
+                        <ul>
+                            <li><span>August 2024 - Present</span><br>OMSCS at Ga.Tech</li>
+                            <li><span>August 2018 - May 2022</span><br>ICE at NITT with minor in CSE</li>
+                        </ul>
                     </div>
                 </div>
             </div>    
@@ -49,5 +68,21 @@
     </div>
 
 
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 </body>
 </html>
